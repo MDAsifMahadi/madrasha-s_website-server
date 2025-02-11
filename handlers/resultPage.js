@@ -121,7 +121,7 @@ resultPage.getResult = async (req, res) => {
     try {
         const id = req.params.id
         if (id) {
-            const results = await Result.find({classId : id});
+            const results = await Result.find({classId : id}).sort({date : -1});
             res.status(200).json({
                 results,
                 message : "New result added"
