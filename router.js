@@ -38,6 +38,7 @@ router.delete("/deleteclass/:id", resultPage.deleteClass);
 
 //============= result ============
 router.post("/createresult", resultPage.createResult);
+router.put("/updateresult", resultPage.updateResult);
 // this id not the result card id but class's id
 router.get("/getresult/:id", resultPage.getResult);
 // but this id is the result card's id.

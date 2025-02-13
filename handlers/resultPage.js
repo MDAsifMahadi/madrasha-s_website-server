@@ -117,6 +117,24 @@ resultPage.createResult = async (req, res) => {
     }
 };
 
+resultPage.updateResult = async (req, res) => {
+    try {
+        const data= await req.body;
+        if (data._id.length > 0 && data.date.length > 0) {
+            const oldResult = await Result.findOneAndUpdate({_id : data._id}, data)
+            res.status(200).json({
+                message : "Result is updated!"
+            });
+            return;
+        }
+        
+    } catch (error) {
+        res.status(500).json({
+            error: "There was an error in the server"
+        })
+    }
+};
+
 resultPage.getResult = async (req, res) => {
     try {
         const id = req.params.id
