@@ -48,6 +48,13 @@ const admin = new mongoose.Schema({
    password : { type: String, required : true },
 })
 
+const about = new mongoose.Schema({
+   classId : { type: String, required : true },
+   teachers : { type: String},
+   students : { type: String},
+   other : { type: String},
+})
+
 
 const Navinfo = mongoose.model("headerinfo", navinfoSchema);
 const HomeCard = mongoose.model("homecard", homeCardSchema);
@@ -57,4 +64,5 @@ const PhoneNum = mongoose.model("phoneNum", phoneNum);
 const AddClass = mongoose.model("class", addClass);
 const Result = mongoose.model("result", result);
 const Admin = mongoose.model("admin", admin);
-module.exports = {Navinfo, HomeCard, SliderUrl, PhoneNum, AddClass, Result, Admin, FooterContent};
+const About = mongoose.model("about", about);
+module.exports = {Navinfo, HomeCard, SliderUrl, PhoneNum, AddClass, Result, Admin, FooterContent, About};

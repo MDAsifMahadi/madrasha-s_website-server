@@ -5,6 +5,8 @@ const imageUploadHandler = require("./handlers/imageUploadHandler");
 const upload = require("./middlewares/uploader");
 const resultPage = require("./handlers/resultPage");
 const adminHandler = require("./handlers/adminHandler");
+const aboutHandler = require("./handlers/aboutHandler");
+
 // ======== text handler =========
 
 // ==== header text  ====
@@ -54,6 +56,9 @@ router.put("/update", adminHandler.update);
 router.post("/footer", homePageHandler.createFooterContent);
 router.get("/footer", homePageHandler.getFooterContent);
 
+// ======== about ==========
 
+router.post("/about", aboutHandler.create);
+router.get("/about/:id", aboutHandler.getInfo);
 
 module.exports = router;
